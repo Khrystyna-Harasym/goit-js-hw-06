@@ -5,10 +5,10 @@ input.addEventListener('blur', onIntup);
 function onIntup(evt) {
     if (evt.currentTarget.value.length < Number(evt.currentTarget.dataset.length)) {
         evt.currentTarget.classList.add("invalid");
-        
-        console.log(input.value);
+        return;
     } else {
-      evt.currentTarget.classList.replace('invalid', 'valid');
-        console.dir(input.value);
+        evt.currentTarget.classList.remove('invalid');
+        evt.currentTarget.classList.add("valid");
+        return;
     }
 } 
